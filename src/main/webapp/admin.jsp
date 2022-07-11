@@ -19,15 +19,8 @@
             </div>
             <div class="user-nav">
                 <ul>
-                    <li>
-                        <form method="post" class="cars-submit">
-                            <input type="submit" value="Cars">
-                        </form>
-                    </li>
-                    <li><form method="post" class="orders-submit">
-                        <input type="submit" value="Orders">
-                    </form>
-                    </li>
+                    <li><a id="cars-link" href="/cars?back=${homeURI}">Cars</a></li>
+                    <li><a id="orders-link" href="/orders?back=${homeURI}">Orders</a></li>
                 </ul>
             </div>
         </div>
