@@ -1,0 +1,26 @@
+* {
+    margin: 0 0;
+    padding: 0 0;
+    box-sizing: border-box;
+}
+
+body {
+
+}
+
+header {
+    background-color: black;
+}
+
+
+header.go-back {
+
+}
+#image-go-back {
+    width: 50px;
+    height: 50px;
+    margin: 0 30px;
+}
+
+
+
