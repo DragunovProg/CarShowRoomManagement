@@ -10,7 +10,9 @@
 <header>
     <div class="header-intro">
         <div class="go-back">
-            <img id="image-go-back" src="${pageContext.request.contextPath}/static/go-back.png" alt="not found">
+            <a href="<%=request.getParameter("back")%>">
+                <img id="image-go-back" src="${pageContext.request.contextPath}/static/go-back.png" alt="not found">
+            </a>
         </div>
     </div>
 </header>

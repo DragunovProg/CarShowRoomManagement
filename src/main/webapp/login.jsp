@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Welcome</title>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/style.css">
 </head>
 <body>
     <header>

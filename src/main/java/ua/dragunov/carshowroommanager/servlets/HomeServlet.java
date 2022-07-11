@@ -15,7 +15,11 @@ public class HomeServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         User user = (User) req.getSession().getAttribute("user");
+        String homeURI = "/home";
+
+        req.setAttribute("homeURI", homeURI);
         req.setAttribute("user", user);
         req.getRequestDispatcher("home.jsp").forward(req, resp);
     }
+
 }

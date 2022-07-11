@@ -4,12 +4,15 @@
 <html>
 <head>
     <title>Cars</title>
+    <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
     <header>
         <div class="header-intro">
             <div class="go-back">
-                <img src="${pageContext.request.contextPath}/static/go-back.png" alt="not found">
+                <a href="<%=request.getParameter("back")%>">
+                    <img id="image-go-back" src="${pageContext.request.contextPath}/static/go-back.png" alt="not found">
+                </a>
             </div>
         </div>
     </header>
@@ -26,7 +29,9 @@
                         <th>Quantity</th>
                     </tr>
                 </thead>
+                <tbody>
                 <c:forEach var="car" items="${requestScope.cars}" >
+
                     <tr>
                         <td>${car.mark}</td>
                         <td>${car.model}</td>
@@ -36,6 +41,7 @@
                         <td>${car.quantity}</td>
                     </tr>
                 </c:forEach>
+                </tbody>
             </table>
         </div>
     </div>
