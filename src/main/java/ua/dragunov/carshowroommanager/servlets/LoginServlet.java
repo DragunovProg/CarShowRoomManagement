@@ -11,15 +11,15 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebServlet(urlPatterns = {"/"})
+@WebServlet(urlPatterns = {"/login"})
 public class LoginServlet extends HttpServlet {
     private static final UserService userService = new UserService();
 
     private static User isCorrectUser(HttpServletRequest request, HttpServletResponse response) {
         return userService.getAllUsers().stream()
                 .filter(evaluatedUser -> evaluatedUser.getEmail()
-                        .equals(request.getParameter("email"))
-                        && evaluatedUser.getPassword().equals(request.getParameter("password")))
+                        .equals(request.getParameter("emailLogin"))
+                        && evaluatedUser.getPassword().equals(request.getParameter("passwordLogin")))
                 .findFirst()
                 .orElse(null);
     }

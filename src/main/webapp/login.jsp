@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Welcome</title>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/style.css">
+    <style><%@include file="static/style.css"%></style>
 </head>
 <body>
     <header>
@@ -13,10 +13,10 @@
     <div class="main">
         <div class="login-form">
             <form method="post" class="login">
-                <div><input type="email" name="email" placeholder="Enter a email"></div>
-                <div><input type="password" name="password" placeholder="Enter a password"></div>
-                <div><input type="submit" value="Sign In"></div>
-                <div>${error}</div>
+                <div><input type="email" name="emailLogin" placeholder="Enter a email"></div>
+                <div><input type="password" name="passwordLogin" placeholder="Enter a password"></div>
+                <div><input type="submit" name="submitLogin" value="Sign In"></div>
+                <div class="error">${error}</div>
             </form>
         </div>
     </div>
