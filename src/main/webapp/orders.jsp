@@ -4,7 +4,8 @@
 <html>
 <head>
     <title>Orders</title>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/style.css">
+    <style><%@include file="static/style.css"%></style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 <header>
@@ -25,7 +26,7 @@
                 <th>Car</th>
                 <th>Purchase date</th>
                 <th>Full price</th>
-
+                <th>Action</th>
             </tr>
             </thead>
             <c:forEach var="order" items="${requestScope.orders}" >
@@ -34,9 +35,18 @@
                     <td>${order.car.mark} ${order.car.model}</td>
                     <td>${order.purchaseDate}</td>
                     <td>${order.fullPrice}</td>
+                    <td>
+                        <a href="<c:url value='/edit-order?id=${order.id}&backurl=${backUrl}'/>" class="edit-btn"><i class="fa fa-edit"></i></a>
+                        <form class="delete-btn-form" action="<c:url value='/delete-order?id=${order.id}&backurl=${backUrl}'/>" method="post" >
+                            <button type="submit"  class="delete-btn"><i class="fa fa-trash"></i></button>
+                        </form>
+                    </td>
                 </tr>
             </c:forEach>
         </table>
+    </div>
+    <div class="add-form-container">
+        <a href="<c:url value='/add-order?backurl=${backUrl}'/>" class="add-order">Add new Order</a>
     </div>
 </div>
 <div class="footer">

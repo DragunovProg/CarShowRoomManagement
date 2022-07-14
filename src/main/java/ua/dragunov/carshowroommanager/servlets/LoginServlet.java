@@ -18,8 +18,8 @@ public class LoginServlet extends HttpServlet {
     private static User isCorrectUser(HttpServletRequest request, HttpServletResponse response) {
         return userService.getAllUsers().stream()
                 .filter(evaluatedUser -> evaluatedUser.getEmail()
-                        .equals(request.getParameter("email"))
-                        && evaluatedUser.getPassword().equals(request.getParameter("password")))
+                        .equals(request.getParameter("emailLogin"))
+                        && evaluatedUser.getPassword().equals(request.getParameter("passwordLogin")))
                 .findFirst()
                 .orElse(null);
     }
