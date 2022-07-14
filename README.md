@@ -1,5 +1,5 @@
 # CarShowRoomManagement
-University project was created for employees and the employer of the CarShowRoom and using for :
+University project that was created for employees and the employer of the CarShowRoom and using for :
 
 - car management - add/remove/edit cars to the database
 - order management - add/remove/edit orders to the database
