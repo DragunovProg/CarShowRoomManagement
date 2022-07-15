@@ -18,7 +18,17 @@ import java.util.stream.Collectors;
 public class HomeServlet extends HttpServlet {
     private static final CarSalesService orderService = new CarSalesService();
 
+    private static<T> void highlightSessionUserInLeaderboard(User user, Map<User, T> leaderboard) {
+        leaderboard.forEach((givenUser, value) ->
+        {
+            if (givenUser.equals(user)) {
+                givenUser.setLastName("<b>" + givenUser.getLastName() + "</b>");
+                givenUser.setFirstName("<b>" + givenUser.getFirstName() + "</b>");
+                givenUser.setEmail("<b>" + givenUser.getEmail() + "</b>");
+            }
+        });
 
+    }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -36,6 +46,8 @@ public class HomeServlet extends HttpServlet {
                         (oldValue, newValue) -> oldValue, LinkedHashMap::new));
         User user = (User) req.getSession().getAttribute("user");
         String homeURI = "/home";
+        HomeServlet.highlightSessionUserInLeaderboard(user, leaderboardBySales);
+        HomeServlet.highlightSessionUserInLeaderboard(user, leaderboardByFullPrice);
 
         req.setAttribute("full_price_leaderboard", leaderboardByFullPrice);
         req.setAttribute("sales_leaderboard", leaderboardBySales);
