@@ -81,7 +81,10 @@ li {
 
 }
 
-.cars-table {
+.cars-table,
+.order-table,
+.leaderboard-by-sales,
+.leaderboard-by-currency {
     text-align: center;
     border-collapse: collapse;
     margin: 25px 0;
@@ -91,60 +94,62 @@ li {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
-.cars-table thead tr {
+.cars-table thead tr,
+.order-table thead tr,
+.leaderboard-by-sales thead tr,
+.leaderboard-by-currency thead tr{
     background-color: #009879;
     color: #ffffff;
     text-align: left;
 }
 
 .cars-table th,
-.cars-table td {
-    padding: 12px 15px;
-}
-
-.cars-table tbody tr {
-    border-bottom: 1px solid #dddddd;
-}
-
-.cars-table tbody tr:nth-of-type(even) {
-    background-color: #f3f3f3;
-}
-
-.cars-table tbody tr:last-of-type {
-    border-bottom: 2px solid #009879;
-}
-
-.order-table {
-    text-align: center;
-    border-collapse: collapse;
-    margin: 25px 0;
-    font-size: 0.9em;
-    font-family: sans-serif;
-    min-width: 600px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-}
-
-.order-table thead tr {
-    background-color: #009879;
-    color: #ffffff;
-    text-align: left;
-}
-
+.cars-table td,
 .order-table th,
-.order-table td {
+.order-table td,
+.leaderboard-by-sales th,
+.leaderboard-by-sales td,
+.leaderboard-by-currency th,
+.leaderboard-by-currency td {
     padding: 12px 15px;
 }
 
-.order-table tbody tr {
+.cars-table tbody tr,
+.order-table tbody tr,
+.leaderboard-by-sales tbody tr,
+.leaderboard-by-currency tbody tr {
     border-bottom: 1px solid #dddddd;
 }
 
-.order-table tbody tr:nth-of-type(even) {
+.cars-table tbody tr:nth-of-type(even),
+.order-table tbody tr:nth-of-type(even),
+.leaderboard-by-sales tbody tr:nth-of-type(even),
+.leaderboard-by-currency tbody tr:nth-of-type(even) {
     background-color: #f3f3f3;
 }
 
-.order-table tbody tr:last-of-type {
+.cars-table tbody tr:last-of-type,
+.order-table tbody tr:last-of-type,
+.leaderboard-by-sales tbody tr:last-of-type,
+.leaderboard-by-currency tbody tr:last-of-type {
     border-bottom: 2px solid #009879;
+}
+
+.home-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left-box,
+.right-box {
+    margin: 0 30px;
+}
+
+.sales-leaderboard,
+.fullprice-leaderboard {
+    font-size: 1.6rem;
+    margin: 0 0 10px 0;
 }
 
 /* login */

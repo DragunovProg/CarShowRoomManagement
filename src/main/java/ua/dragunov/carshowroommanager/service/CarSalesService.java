@@ -7,6 +7,7 @@ import ua.dragunov.carshowroommanager.dao.CarSalesDAOImpl;
 import ua.dragunov.carshowroommanager.model.CarSales;
 import ua.dragunov.carshowroommanager.model.User;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -47,12 +48,23 @@ public class CarSalesService {
                 .count();
     }
 
-    public Map<User, Long> getUsersSales() {
+    public Map<User, Long> getUsersLeaderboardBySales() {
         return getAllCarSales().stream()
                 .collect(Collectors.groupingBy(CarSales::getUser,
                         Collectors.counting()));
     }
 
+    public Map<User, Long> getUsersLeaderboardByFullPrice() {
+        return getAllCarSales().stream()
+                .collect(Collectors.groupingBy(CarSales::getUser,
+                        Collectors.summingLong(order -> order.getFullPrice().toBigInteger().longValue())));
+    }
 
+    /*public static void main(String[] args) {
+        CarSalesService orderService = new CarSalesService();
 
+        orderService.getUsersLeaderboardBySales().forEach((user, amountSales) ->
+                System.out.printf("%s %s : %d sales\n",user.getLastName(), user.getFirstName(), amountSales   ));
+    }
+*/
 }
