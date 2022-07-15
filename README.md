@@ -21,6 +21,9 @@ University project that was created for employees and the employer of the CarSho
   
   [home page](https://github.com/DragunovProg/CarShowRoomManagement/blob/master/src/main/webapp/home.jsp)
   
+  <img width="960" alt="image" src="https://user-images.githubusercontent.com/38536952/179218690-22f4494e-3bf6-4f7c-8f94-0d25af61f1c7.png">
+
+  
   [cars page](gunovProg/CarShowRoomManagement/blob/master/src/main/webapp/cars.jsp)
   <img width="960" alt="image" src="https://user-images.githubusercontent.com/38536952/178968443-53d05e32-3f18-42fc-b09f-d9852b689de2.png">
   
