@@ -32,8 +32,8 @@
             </c:forEach>
             </select>
         </div>
-        <div><input type="date" name="purchase_date" ></div>
-        <div><input type="number" name="full_price" ></div>
+        <div><input type="date" name="purchase_date" required></div>
+        <div><input type="number" name="full_price" required></div>
         <div><input type="submit" name="addSubmit" value="add"></div>
     </form>
 </div>

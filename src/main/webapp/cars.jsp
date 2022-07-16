@@ -6,6 +6,7 @@
     <title>Cars</title>
     <link rel="stylesheet" href="/static/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
     <header>
@@ -53,6 +54,7 @@
                 </tbody>
             </table>
         </div>
+        <div id="pagination-cars" class="pagenumbers"></div>
         <div class="add-form-container">
             <a href="<c:url value='/add?backurl=${backUrl}'/>" class="add-car">Add new Car</a>
         </div>
@@ -60,5 +62,6 @@
     <div class="footer">
 
     </div>
+    <script src="${pageContext.request.contextPath}/static/scripts/carPagination.js"></script>
 </body>
 </html>
