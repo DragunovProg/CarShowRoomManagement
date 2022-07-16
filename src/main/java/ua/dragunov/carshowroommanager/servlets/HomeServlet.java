@@ -32,18 +32,8 @@ public class HomeServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        Map<User, Long> leaderboardBySales = orderService.getUsersLeaderboardBySales()
-                .entrySet()
-                .stream()
-                .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
-                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
-                        (oldValue, newValue) -> oldValue, LinkedHashMap::new));
-        Map<User, Long> leaderboardByFullPrice = orderService.getUsersLeaderboardByFullPrice()
-                .entrySet()
-                .stream()
-                .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
-                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
-                        (oldValue, newValue) -> oldValue, LinkedHashMap::new));
+        Map<User, Long> leaderboardBySales = getSortedLeaderboard(orderService.getUsersLeaderboardBySales());
+        Map<User, Long> leaderboardByFullPrice = getSortedLeaderboard(orderService.getUsersLeaderboardByFullPrice());
         User user = (User) req.getSession().getAttribute("user");
         String homeURI = "/home";
         HomeServlet.highlightSessionUserInLeaderboard(user, leaderboardBySales);
@@ -54,6 +44,15 @@ public class HomeServlet extends HttpServlet {
         req.setAttribute("homeURI", homeURI);
         req.setAttribute("user", user);
         req.getRequestDispatcher("home.jsp").forward(req, resp);
+    }
+
+    private LinkedHashMap<User, Long> getSortedLeaderboard(Map<User, Long> orderService) {
+        return orderService
+                .entrySet()
+                .stream()
+                .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
+                        (oldValue, newValue) -> oldValue, LinkedHashMap::new));
     }
 
 }

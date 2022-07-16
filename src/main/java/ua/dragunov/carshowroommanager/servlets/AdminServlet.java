@@ -15,7 +15,7 @@ public class AdminServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         User user = (User) req.getSession().getAttribute("user");
-        String homeURI = "/home";
+        String homeURI = "/admin";
 
         req.setAttribute("homeURI", homeURI);
         req.getRequestDispatcher("admin.jsp").forward(req, resp);

@@ -271,7 +271,8 @@ input[name="price"],
 input[name="quantity"],
 input[name="purchase_date"],
 select[name="car_select"],
-input[name="full_price"]{
+select[name="user_select"],
+input[name="full_price"] {
     width: 250px;
     text-align: center;
     margin: 15px 0 0 0;
