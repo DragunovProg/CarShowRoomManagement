@@ -21,7 +21,7 @@ public class AddOrderServlet extends HttpServlet {
     private static final UserService userService = new UserService();
 
     private List<User> getUsersByUserRole(User user) {
-        if (user.getRole().getName().equalsIgnoreCase("employee ")) {
+        if (user.getRole().getName().equalsIgnoreCase("employee")) {
             return List.of(user);
         }
 

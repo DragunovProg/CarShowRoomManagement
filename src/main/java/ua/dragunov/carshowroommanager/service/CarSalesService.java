@@ -4,6 +4,7 @@ package ua.dragunov.carshowroommanager.service;
 
 
 import ua.dragunov.carshowroommanager.dao.CarSalesDAOImpl;
+import ua.dragunov.carshowroommanager.model.Car;
 import ua.dragunov.carshowroommanager.model.CarSales;
 import ua.dragunov.carshowroommanager.model.User;
 
@@ -42,12 +43,6 @@ public class CarSalesService {
     }
 
 
-    public long getCountOfSalesByUser(User user) {
-        return getAllCarSales().stream()
-                .filter(carSales -> carSales.getUser().equals(user))
-                .count();
-    }
-
     public Map<User, Long> getUsersLeaderboardBySales() {
         return getAllCarSales().stream()
                 .collect(Collectors.groupingBy(CarSales::getUser,
@@ -60,11 +55,10 @@ public class CarSalesService {
                         Collectors.summingLong(order -> order.getFullPrice().toBigInteger().longValue())));
     }
 
-    /*public static void main(String[] args) {
-        CarSalesService orderService = new CarSalesService();
-
-        orderService.getUsersLeaderboardBySales().forEach((user, amountSales) ->
-                System.out.printf("%s %s : %d sales\n",user.getLastName(), user.getFirstName(), amountSales   ));
+    public Map<Car, Long> getCarRatingBySales() {
+        return getAllCarSales().stream()
+                .collect(Collectors.groupingBy(CarSales::getCar, Collectors.counting()));
     }
-*/
+
+
 }

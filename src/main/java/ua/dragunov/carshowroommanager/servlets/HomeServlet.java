@@ -40,7 +40,7 @@ public class HomeServlet extends HttpServlet {
         HomeServlet.highlightSessionUserInLeaderboard(user, leaderboardByFullPrice);
 
         req.setAttribute("full_price_leaderboard", leaderboardByFullPrice);
-        req.setAttribute("sales_leaderboard", leaderboardBySales);
+            req.setAttribute("sales_leaderboard", leaderboardBySales);
         req.setAttribute("homeURI", homeURI);
         req.setAttribute("user", user);
         req.getRequestDispatcher("home.jsp").forward(req, resp);

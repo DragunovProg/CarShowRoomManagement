@@ -84,10 +84,11 @@ li {
 .cars-table,
 .order-table,
 .leaderboard-by-sales,
-.leaderboard-by-currency {
+.leaderboard-by-currency,
+.car-rating {
     text-align: center;
     border-collapse: collapse;
-    margin: 25px 0;
+    margin: 25px 0 0 10px;
     font-size: 0.9em;
     font-family: sans-serif;
     min-width: 400px;
@@ -97,7 +98,8 @@ li {
 .cars-table thead tr,
 .order-table thead tr,
 .leaderboard-by-sales thead tr,
-.leaderboard-by-currency thead tr{
+.leaderboard-by-currency thead tr,
+.car-rating thead tr {
     background-color: #009879;
     color: #ffffff;
     text-align: left;
@@ -110,32 +112,38 @@ li {
 .leaderboard-by-sales th,
 .leaderboard-by-sales td,
 .leaderboard-by-currency th,
-.leaderboard-by-currency td {
+.leaderboard-by-currency td,
+.car-rating th,
+.car-rating td {
     padding: 12px 15px;
 }
 
 .cars-table tbody tr,
 .order-table tbody tr,
 .leaderboard-by-sales tbody tr,
-.leaderboard-by-currency tbody tr {
+.leaderboard-by-currency tbody tr,
+.car-rating tbody tr {
     border-bottom: 1px solid #dddddd;
 }
 
 .cars-table tbody tr:nth-of-type(even),
 .order-table tbody tr:nth-of-type(even),
 .leaderboard-by-sales tbody tr:nth-of-type(even),
-.leaderboard-by-currency tbody tr:nth-of-type(even) {
+.leaderboard-by-currency tbody tr:nth-of-type(even),
+.car-rating tbody tr:nth-of-type(even) {
     background-color: #f3f3f3;
 }
 
 .cars-table tbody tr:last-of-type,
 .order-table tbody tr:last-of-type,
 .leaderboard-by-sales tbody tr:last-of-type,
-.leaderboard-by-currency tbody tr:last-of-type {
+.leaderboard-by-currency tbody tr:last-of-type,
+.car-rating tbody tr:last-of-type {
     border-bottom: 2px solid #009879;
 }
 
-.home-container {
+.home-container,
+.main-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -147,7 +155,8 @@ li {
 }
 
 .sales-leaderboard,
-.fullprice-leaderboard {
+.fullprice-leaderboard,
+.car-rating-caption {
     font-size: 1.6rem;
     margin: 0 0 10px 0;
 }
@@ -320,7 +329,13 @@ input[name="editOrderSubmit"]{
     color: white;
     text-decoration: none;
     font-size: 1.5rem;
+    transition: 0.5s linear;
 }
+
+#logout:hover {
+    color: #750d21;
+}
+
 
 .pagenumbers {
     display: flex;
@@ -330,13 +345,30 @@ input[name="editOrderSubmit"]{
 #page,
 #page-cars {
     text-decoration: none;
-    background-color: black;
-    color: white;
-    border-radius: 25px;
+    color: black;
     margin: 0 10px 40px;
     width: 50px;
     height: 30px;
     text-align: center;
     padding: 5px 0 0 0;
     font-size: 1.2rem;
+
 }
+
+#page:hover,
+#page-cars:hover {
+    background-color: black;
+    color: white;
+}
+
+
+
+.total-sales {
+    margin: 10px 0 0 40px;
+}
+
+.sales {
+    font-size: 1.5rem;
+}
+
+
