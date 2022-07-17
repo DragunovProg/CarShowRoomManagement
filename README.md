@@ -21,14 +21,16 @@ University project that was created for employees and the employer of the CarSho
   
   [home page](https://github.com/DragunovProg/CarShowRoomManagement/blob/master/src/main/webapp/home.jsp)
   
-  <img width="960" alt="image" src="https://user-images.githubusercontent.com/38536952/179218690-22f4494e-3bf6-4f7c-8f94-0d25af61f1c7.png">
+  <img width="960" alt="image" src="https://user-images.githubusercontent.com/38536952/179395184-fae6f395-b5e7-4a08-b48d-04aae742868d.png">
+
 
   
   [cars page](gunovProg/CarShowRoomManagement/blob/master/src/main/webapp/cars.jsp)
-  <img width="960" alt="image" src="https://user-images.githubusercontent.com/38536952/178968443-53d05e32-3f18-42fc-b09f-d9852b689de2.png">
+  <img width="949" alt="image" src="https://user-images.githubusercontent.com/38536952/179395161-314fe2a8-46c8-4482-b30c-dce8b0d6facd.png">
+
   
   [orders page](https://github.com/DragunovProg/CarShowRoomManagement/blob/master/src/main/webapp/orders.jsp)
-  <img width="960" alt="image" src="https://user-images.githubusercontent.com/38536952/178968521-824eb12c-749e-4350-9661-11996bdf8bab.png">
+  <img width="960" alt="image" src="https://user-images.githubusercontent.com/38536952/179395166-8d0c3f6b-31c4-41e0-9c9b-c6380bfb2a39.png">
   
   [edit pages](https://github.com/DragunovProg/CarShowRoomManagement/tree/master/src/main/webapp) - for edit cars or orders column
   
