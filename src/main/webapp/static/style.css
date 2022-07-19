@@ -38,14 +38,16 @@ li {
     display: inline-block;
 }
 
-#cars-link {
+#cars-link,
+#employee-link {
     font-size: 1.5rem;
     text-decoration: none;
     color: white;
     transition: 1s linear;
 }
 
-#cars-link:hover {
+#cars-link:hover,
+#employee-link:hover {
     color: crimson;
 }
 
@@ -85,7 +87,8 @@ li {
 .order-table,
 .leaderboard-by-sales,
 .leaderboard-by-currency,
-.car-rating {
+.car-rating,
+.employees-table {
     text-align: center;
     border-collapse: collapse;
     margin: 25px 0 0 10px;
@@ -99,7 +102,8 @@ li {
 .order-table thead tr,
 .leaderboard-by-sales thead tr,
 .leaderboard-by-currency thead tr,
-.car-rating thead tr {
+.car-rating thead tr,
+.employees-table thead tr {
     background-color: #009879;
     color: #ffffff;
     text-align: left;
@@ -114,7 +118,9 @@ li {
 .leaderboard-by-currency th,
 .leaderboard-by-currency td,
 .car-rating th,
-.car-rating td {
+.car-rating td,
+.employees-table th,
+.employees-table td {
     padding: 12px 15px;
 }
 
@@ -122,7 +128,8 @@ li {
 .order-table tbody tr,
 .leaderboard-by-sales tbody tr,
 .leaderboard-by-currency tbody tr,
-.car-rating tbody tr {
+.car-rating tbody tr,
+.employees-table tbody tr {
     border-bottom: 1px solid #dddddd;
 }
 
@@ -130,7 +137,8 @@ li {
 .order-table tbody tr:nth-of-type(even),
 .leaderboard-by-sales tbody tr:nth-of-type(even),
 .leaderboard-by-currency tbody tr:nth-of-type(even),
-.car-rating tbody tr:nth-of-type(even) {
+.car-rating tbody tr:nth-of-type(even),
+.employees-table tbody tr:nth-of-type(even) {
     background-color: #f3f3f3;
 }
 
@@ -138,7 +146,8 @@ li {
 .order-table tbody tr:last-of-type,
 .leaderboard-by-sales tbody tr:last-of-type,
 .leaderboard-by-currency tbody tr:last-of-type,
-.car-rating tbody tr:last-of-type {
+.car-rating tbody tr:last-of-type,
+.employees-table tbody tr:last-of-type {
     border-bottom: 2px solid #009879;
 }
 

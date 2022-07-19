@@ -16,6 +16,7 @@
             </div>
             <div class="user-nav">
                 <ul>
+                    <li><a id="employee-link" href="/employees?back=${homeURI}">Employees</a></li>
                     <li><a id="cars-link" href="/cars?back=${homeURI}">Cars</a></li>
                     <li><a id="orders-link" href="/orders?back=${homeURI}">Orders</a></li>
                     <li><a id="logout" href="${pageContext.request.contextPath}/logout">
