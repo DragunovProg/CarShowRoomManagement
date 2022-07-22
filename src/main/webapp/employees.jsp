@@ -48,9 +48,6 @@
             </table>
         </div>
         <div id="pagination" class="pagenumbers"></div>
-        <div class="add-form-container">
-            <a href="<c:url value='/add?backurl=${backUrl}'/>" class="add-car">Add new Car</a>
-        </div>
     </div>
     <div class="footer">
 

@@ -24,7 +24,10 @@ public class User {
     @JoinColumn(name = "user_role_id", referencedColumnName = "id")
     private UserRole role;
 
-    @OneToMany(mappedBy = "user",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "user",cascade = {CascadeType.MERGE
+            , CascadeType.PERSIST
+            , CascadeType.DETACH
+            , CascadeType.REFRESH})
     List<CarSales> carSales;
 
     public List<CarSales> getCarSales() {

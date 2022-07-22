@@ -16,7 +16,10 @@ public class EmployeesServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<User> users = userService.getAllUsers();
+        List<User> users = userService.getAllUsers()
+                .stream()
+                .filter(user -> !(user.equals((User)request.getSession().getAttribute("user"))))
+                .toList();
 
         request.setAttribute("backUrl", request.getParameter("back"));
         request.setAttribute("employees", users);

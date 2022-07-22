@@ -13,7 +13,10 @@ public class UserRole {
     @Column(name = "role_name", unique = true)
     private String name;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "role")
+    @OneToMany(cascade = {CascadeType.MERGE
+            , CascadeType.PERSIST
+            , CascadeType.DETACH
+            , CascadeType.REFRESH}, mappedBy = "role")
     List<User> users;
 
     public List<User> getUsers() {
