@@ -3,18 +3,18 @@ University project that was created for employees and the employer of the CarSho
 
 - car management - add/remove/edit cars to the database
 - order management - add/remove/edit orders to the database
-- employee management(access for a employer) - add/remove/edit employees to the database
+- employee management(access for an employer) - add/remove/edit employees to the database
 
 ### Technical stack
 
-- Java - bussiness logic layer
+- Java Core - business logic layer
 - Hibernate - was used for access to a database and operation with her. Model and DAO layer
-- Servlet & JSP - representation layer
+- Servlet & JSP & CSS - representation layer
 
 #### ER diagram
 <img width="384" alt="image" src="https://user-images.githubusercontent.com/38536952/178967131-a347be84-ebd3-4868-9a3f-aa9159cb0db2.png">
 
-## site have a 
+## site has a 
  
   [login page](https://github.com/DragunovProg/CarShowRoomManagement/blob/master/src/main/webapp/login.jsp)
   <img width="959" alt="image" src="https://user-images.githubusercontent.com/38536952/178968183-89a525c1-694c-4093-b36b-d5c32b4dfadb.png">
