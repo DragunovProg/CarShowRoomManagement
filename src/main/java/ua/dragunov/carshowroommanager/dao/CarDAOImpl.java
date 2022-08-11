@@ -1,12 +1,18 @@
 package ua.dragunov.carshowroommanager.dao;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import ua.dragunov.carshowroommanager.model.Car;
+import ua.dragunov.carshowroommanager.service.CarService;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
+import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.List;
 
 public class CarDAOImpl implements CarDAO{
+    private static final Logger CAR_DAO_LOGGER = LogManager.getLogger(CarDAOImpl.class);
 
     @Override
     public void createCar(Car car) {
@@ -14,6 +20,7 @@ public class CarDAOImpl implements CarDAO{
                 .createEntityManager();
         entityManager.getTransaction().begin();
         entityManager.persist(car);
+        CAR_DAO_LOGGER.info(car + " was created");
         entityManager.getTransaction().commit();
         entityManager.close();
     }
@@ -24,6 +31,7 @@ public class CarDAOImpl implements CarDAO{
                 .createEntityManager();
         entityManager.getTransaction().begin();
         Car car = entityManager.find(Car.class, id);
+        CAR_DAO_LOGGER.info("get car : " + car);
         entityManager.getTransaction().commit();
         entityManager.close();
 
@@ -51,6 +59,7 @@ public class CarDAOImpl implements CarDAO{
         query.setParameter("cid", car.getId());
         query.executeUpdate();
 
+        CAR_DAO_LOGGER.info(car + " was updated ");
         entityManager.getTransaction().commit();
         entityManager.close();
     }
@@ -62,9 +71,11 @@ public class CarDAOImpl implements CarDAO{
         entityManager.getTransaction().begin();
         Car removingCar = entityManager.find(Car.class, carId);
         entityManager.remove(removingCar);
+        CAR_DAO_LOGGER.info(removingCar + " was removed");
         entityManager.getTransaction().commit();
         entityManager.close();
     }
+
 
     @Override
     public List<Car> getAllCars() {
@@ -73,4 +84,5 @@ public class CarDAOImpl implements CarDAO{
                 .createQuery("select c from Car c", Car.class)
                 .getResultList();
     }
+
 }

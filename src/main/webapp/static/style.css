@@ -38,14 +38,16 @@ li {
     display: inline-block;
 }
 
-#cars-link {
+#cars-link,
+#employee-link {
     font-size: 1.5rem;
     text-decoration: none;
     color: white;
     transition: 1s linear;
 }
 
-#cars-link:hover {
+#cars-link:hover,
+#employee-link:hover {
     color: crimson;
 }
 
@@ -81,70 +83,91 @@ li {
 
 }
 
-.cars-table {
+.cars-table,
+.order-table,
+.leaderboard-by-sales,
+.leaderboard-by-currency,
+.car-rating,
+.employees-table {
     text-align: center;
     border-collapse: collapse;
-    margin: 25px 0;
+    margin: 25px 0 0 10px;
     font-size: 0.9em;
     font-family: sans-serif;
     min-width: 400px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
-.cars-table thead tr {
+.cars-table thead tr,
+.order-table thead tr,
+.leaderboard-by-sales thead tr,
+.leaderboard-by-currency thead tr,
+.car-rating thead tr,
+.employees-table thead tr {
     background-color: #009879;
     color: #ffffff;
     text-align: left;
 }
 
 .cars-table th,
-.cars-table td {
-    padding: 12px 15px;
-}
-
-.cars-table tbody tr {
-    border-bottom: 1px solid #dddddd;
-}
-
-.cars-table tbody tr:nth-of-type(even) {
-    background-color: #f3f3f3;
-}
-
-.cars-table tbody tr:last-of-type {
-    border-bottom: 2px solid #009879;
-}
-
-.order-table {
-    text-align: center;
-    border-collapse: collapse;
-    margin: 25px 0;
-    font-size: 0.9em;
-    font-family: sans-serif;
-    min-width: 600px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-}
-
-.order-table thead tr {
-    background-color: #009879;
-    color: #ffffff;
-    text-align: left;
-}
-
+.cars-table td,
 .order-table th,
-.order-table td {
+.order-table td,
+.leaderboard-by-sales th,
+.leaderboard-by-sales td,
+.leaderboard-by-currency th,
+.leaderboard-by-currency td,
+.car-rating th,
+.car-rating td,
+.employees-table th,
+.employees-table td {
     padding: 12px 15px;
 }
 
-.order-table tbody tr {
+.cars-table tbody tr,
+.order-table tbody tr,
+.leaderboard-by-sales tbody tr,
+.leaderboard-by-currency tbody tr,
+.car-rating tbody tr,
+.employees-table tbody tr {
     border-bottom: 1px solid #dddddd;
 }
 
-.order-table tbody tr:nth-of-type(even) {
+.cars-table tbody tr:nth-of-type(even),
+.order-table tbody tr:nth-of-type(even),
+.leaderboard-by-sales tbody tr:nth-of-type(even),
+.leaderboard-by-currency tbody tr:nth-of-type(even),
+.car-rating tbody tr:nth-of-type(even),
+.employees-table tbody tr:nth-of-type(even) {
     background-color: #f3f3f3;
 }
 
-.order-table tbody tr:last-of-type {
+.cars-table tbody tr:last-of-type,
+.order-table tbody tr:last-of-type,
+.leaderboard-by-sales tbody tr:last-of-type,
+.leaderboard-by-currency tbody tr:last-of-type,
+.car-rating tbody tr:last-of-type,
+.employees-table tbody tr:last-of-type {
     border-bottom: 2px solid #009879;
+}
+
+.home-container,
+.main-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left-box,
+.right-box {
+    margin: 0 30px;
+}
+
+.sales-leaderboard,
+.fullprice-leaderboard,
+.car-rating-caption {
+    font-size: 1.6rem;
+    margin: 0 0 10px 0;
 }
 
 /* login */
@@ -266,7 +289,8 @@ input[name="price"],
 input[name="quantity"],
 input[name="purchase_date"],
 select[name="car_select"],
-input[name="full_price"]{
+select[name="user_select"],
+input[name="full_price"] {
     width: 250px;
     text-align: center;
     margin: 15px 0 0 0;
@@ -304,3 +328,56 @@ input[name="editOrderSubmit"]{
     border-radius: 10px;
     padding: 7px;
 }
+
+.footer {
+    width: 100%;
+    height: 10vh;
+}
+
+#logout {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: 0.5s linear;
+}
+
+#logout:hover {
+    color: #750d21;
+}
+
+
+.pagenumbers {
+    display: flex;
+    justify-content: center;
+}
+
+#page,
+#page-cars {
+    text-decoration: none;
+    color: black;
+    margin: 0 10px 40px;
+    width: 50px;
+    height: 30px;
+    text-align: center;
+    padding: 5px 0 0 0;
+    font-size: 1.2rem;
+
+}
+
+#page:hover,
+#page-cars:hover {
+    background-color: black;
+    color: white;
+}
+
+
+
+.total-sales {
+    margin: 10px 0 0 40px;
+}
+
+.sales {
+    font-size: 1.5rem;
+}
+
+

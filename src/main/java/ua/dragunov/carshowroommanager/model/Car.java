@@ -25,7 +25,10 @@ public class Car {
     @Column(nullable = false)
     private int quantity;
 
-    @OneToMany(mappedBy = "car", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "car", cascade = {CascadeType.MERGE
+            , CascadeType.PERSIST
+            , CascadeType.DETACH
+            , CascadeType.REFRESH})
     List<CarSales> carSalesList;
 
     public List<CarSales> getCarSalesList() {

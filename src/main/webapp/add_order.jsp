@@ -19,14 +19,21 @@
 <div class="form-container">
     <form method="post" class="add">
         <div>
+            <select name="user_select">
+                <c:forEach var="user" items="${users}">
+                    <option value="${user.id}">${user.firstName} ${user.lastName}</option>
+                </c:forEach>
+            </select>
+        </div>
+        <div>
             <select name="car_select">
             <c:forEach var="car" items="${cars}">
             <option value="${car.id}">${car.mark} ${car.model}</option>
             </c:forEach>
             </select>
         </div>
-        <div><input type="date" name="purchase_date" ></div>
-        <div><input type="number" name="full_price" ></div>
+        <div><input type="date" name="purchase_date" required></div>
+        <div><input type="number" name="full_price" required></div>
         <div><input type="submit" name="addSubmit" value="add"></div>
     </form>
 </div>

@@ -6,6 +6,7 @@
     <title>Orders</title>
     <style><%@include file="static/style.css"%></style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
 <header>
@@ -45,6 +46,7 @@
             </c:forEach>
         </table>
     </div>
+    <div id="pagination" class="pagenumbers"></div>
     <div class="add-form-container">
         <a href="<c:url value='/add-order?backurl=${backUrl}'/>" class="add-order">Add new Order</a>
     </div>
@@ -52,5 +54,6 @@
 <div class="footer">
 
 </div>
+<script src="${pageContext.request.contextPath}/static/scripts/orderPagination.js"></script>
 </body>
 </html>

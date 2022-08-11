@@ -34,6 +34,8 @@ public class LoginServlet extends HttpServlet {
         User user = isCorrectUser(req, resp);
         HttpSession session = req.getSession();
 
+
+
         if (user != null) {
             session.setAttribute("user", user);
 
